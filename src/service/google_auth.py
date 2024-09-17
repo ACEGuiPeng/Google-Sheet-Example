@@ -7,7 +7,6 @@
 @Desc :
 """
 import os
-import pprint
 
 import google.auth
 import google.auth.transport.requests
@@ -73,6 +72,4 @@ def access_token_from_impersonated_credentials(
     request = google.auth.transport.requests.Request()
     target_credentials.refresh(request)
     # The token field is target_credentials.token.
-    token = target_credentials.token
-    print(f"Generated OAuth2 token:{token}")
-    return token
+    return target_credentials

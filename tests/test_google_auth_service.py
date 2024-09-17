@@ -26,8 +26,8 @@ class TestTemplate(unittest.TestCase):
         scopes = ['https://www.googleapis.com/auth/cloud-platform',
                   'https://www.googleapis.com/auth/spreadsheets.readonly',
                   'https://www.googleapis.com/auth/drive']
-        token = access_token_from_impersonated_credentials(impersonated_service_account, scopes)
-        self.assertIsNotNone(token)
+        target_credentials = access_token_from_impersonated_credentials(impersonated_service_account, scopes)
+        self.assertIsNotNone(target_credentials)
 
 
 if __name__ == '__main__':
